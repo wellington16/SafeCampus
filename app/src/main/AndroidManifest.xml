@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.LoginActivity" />
+        <activity android:name=".view.LoginActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
         <activity android:name=".view.CadastroActivity" />
         <activity android:name=".view.BotaoPanicoActivity" />
         <activity android:name=".view.RelatorioActivity" />
@@ -20,12 +29,22 @@
         <activity
             android:name=".view.TelaInicialActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
+        <receiver android:name=".MediaButtonReceiver">
+            <!--<intent-filter><action android:name="android.media.VOLUME_CHANGED_ACTION"/></intent-filter>-->
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.media.VOLUME_CHANGED_ACTION"/>
+            <!--<action android:name="android.intent.action.MEDIA_BUTTON"/>-->
+            </intent-filter>
+        </receiver>
+
+        <uses-permission android:name="android.permission.PREVENT_POWER_KEY"/>
+
     </application>
 
 </manifest>

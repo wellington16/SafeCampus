@@ -1,24 +1,41 @@
 package com.ufrpe.safecampus.view;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.Toast;
 
 import com.ufrpe.safecampus.R;
 
-public class BotaoPanicoActivity extends AppCompatActivity {
 
-    private Button btnPanico;
+
+public class BotaoPanicoActivity extends AppCompatActivity  {
+    private Switch btnPanico;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_botao_panico);
+        btnPanico = (Switch) findViewById(R.id.swPanico);
+        btnPanico.setChecked(false);
+        btnPanico.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+            @Override public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    ligarModoPanico(buttonView);
+                } else {
+                    desligarModoPanico(buttonView);
+                }
 
-        btnPanico = (Button) findViewById(R.id.swPanico);
+            }
+        });
+
     }
+
+
+
 
     @Override
     public void onBackPressed(){
@@ -27,7 +44,15 @@ public class BotaoPanicoActivity extends AppCompatActivity {
         finish();
     }
 
-    public void ligarModoPanico(View view){
+    //pegar o evento da tela do botão do panico quando
+    public void ligarModoPanico(View view) {
+        Toast.makeText(this,"Ligado ", Toast.LENGTH_SHORT).show();
 
     }
+    public void desligarModoPanico(View view){
+
+        Toast.makeText(this,"Desligado " ,Toast.LENGTH_SHORT).show();
+    }
+
+
 }

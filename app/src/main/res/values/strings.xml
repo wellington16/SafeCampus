@@ -1,15 +1,18 @@
 <resources>
     <string name="app_name">SafeCampus</string>
-    <string name="title_activity_tela_inicial">TelaInicialActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
 
     //Avisos
     <string name="email_vazio">Campo email não pode ser vazio!</string>
     <string name="senha_vazio">Campo senha não pode ser vazio!</string>
     <string name="email_senha_invalido">Email ou Senha inválidos!</string>
-    <string name="email_invalido">Email inválidos!</string>
+
+    //Tela_login
+    <string name="hint_email_tela_login">Email</string>
+    <string name="hint_senha_tela_login">Senha</string>
+    <string name="botao_login_tela_login">Login</string>
+    <string name="botao_cadastrar_tela_login">Cadastrar</string>
+    <string name="label_Tela_login">Esqueci minha senha.</string>
 </resources>
